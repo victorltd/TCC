@@ -12,7 +12,7 @@ function epochToDateTime(epochTime){
     ("00" + epochDate.getHours()).slice(-2) + ":" +
     ("00" + epochDate.getMinutes()).slice(-2) + ":" +
     ("00" + epochDate.getSeconds()).slice(-2);
-  console.log(dateTime)
+
   return dateTime;
 }
 
@@ -28,7 +28,6 @@ function plotValues(chart, timestamp, value){
 }
 
 // DOM elements
-const signupElement = document.querySelector('#signup-form');
 const loginElement = document.querySelector('#login-form');
 const contentElement = document.querySelector("#content-sign-in");
 const userDetailsElement = document.querySelector('#user-details');
@@ -52,17 +51,12 @@ const chartsDivElement = document.querySelector('#charts-div');
 const tempElement = document.getElementById("temp");
 const humElement = document.getElementById("hum");
 const presElement = document.getElementById("pres");
-const adElement = document.getElementById("ad");
-//ad element above
 const updateElement = document.getElementById("lastUpdate")
 
 // MANAGE LOGIN/LOGOUT UI
 const setupUI = (user) => {
   if (user) {
     //toggle UI elements
-    //do signup
-    signupElement.style.display = 'none';
-
     loginElement.style.display = 'none';
     contentElement.style.display = 'block';
     authBarElement.style.display ='block';
@@ -73,45 +67,35 @@ const setupUI = (user) => {
     var uid = user.uid;
     console.log(uid);
 
-/* tentendo ver se essa porra funciona pra qualquer email logado
+    /*
     // Database paths (with user UID)
     var dbPath = 'UsersData/' + uid.toString() + '/readings';
     var chartPath = 'UsersData/' + uid.toString() + '/charts/range';
 */
 
-    // Database paths (with user UID)
-    var dbPath = 'UsersData/readings';
-    var chartPath = 'UsersData/charts/range';
-
+  // Database paths (with user UID)
+  var dbPath = 'UsersData/readings';
+  var chartPath = 'UsersData/charts/range';
 
     // Database references
     var dbRef = firebase.database().ref(dbPath);
     var chartRef = firebase.database().ref(chartPath);
 
-
     // CHARTS
-
-    //this shit only works when i put all ad variables here and maybe on the charts-definition file, i hope.
-    //at this moment, i will work with these charts, later i add the ad chart, quickly too :)
-
-
     // Number of readings to plot on charts
     var chartRange = 20;
     // Get number of readings to plot saved on database (runs when the page first loads and whenever there's a change in the database)
     chartRef.on('value', snapshot =>{
       chartRange = Number(snapshot.val());
       console.log(chartRange);
-     
-
-
+      // Delete all data from charts to update with new values when a new range is selected
+      chartT.destroy();
+      chartH.destroy();
+      chartP.destroy();
       // Render new charts to display new range of data
       chartT = createTemperatureChart();
       chartH = createHumidityChart();
       chartP = createPressureChart();
-      chartAD = createADChart();
-
-
-
       // Update the charts with the new range
       // Get the latest readings and plot them on charts (the number of plotted readings corresponds to the chartRange value)
       dbRef.orderByKey().limitToLast(chartRange).on('child_added', snapshot =>{
@@ -120,30 +104,21 @@ const setupUI = (user) => {
         var temperature = jsonData.temperature;
         var humidity = jsonData.humidity;
         var pressure = jsonData.pressure;
-        var ad = jsonData.ad;
-
-
-
         var timestamp = jsonData.timestamp;
         // Plot the values on the charts
         plotValues(chartT, timestamp, temperature);
         plotValues(chartH, timestamp, humidity);
         plotValues(chartP, timestamp, pressure);
-        plotValues(chartAD, timestamp, ad);
-
-
-        updateElement.innerHTML = epochToDateTime(timestamp);
-
       });
     });
+
     /*
     // Update database with new range (input field)
     chartsRangeInputElement.onchange = () =>{
       chartRef.set(chartsRangeInputElement.value);
     };
-
-    */
-/*
+*/
+    /*
     //CHECKBOXES
     // Checbox (cards for sensor readings)
     cardsCheckboxElement.addEventListener('change', (e) =>{
@@ -172,7 +147,7 @@ const setupUI = (user) => {
         chartsDivElement.style.display = 'none';
       }
     });
-*/
+    */
 
     // CARDS
     // Get the latest readings and display on cards
@@ -181,16 +156,11 @@ const setupUI = (user) => {
       var temperature = jsonData.temperature;
       var humidity = jsonData.humidity;
       var pressure = jsonData.pressure;
-      var ad = jsonData.ad;
-      //added ad measure
       var timestamp = jsonData.timestamp;
       // Update DOM elements
       tempElement.innerHTML = temperature;
       humElement.innerHTML = humidity;
       presElement.innerHTML = pressure;
-      adElement.innerHTML = ad;
-
-//remeber to add the ad element, maybe need change anything in the html 
       updateElement.innerHTML = epochToDateTime(timestamp);
     });
 
@@ -211,7 +181,7 @@ const setupUI = (user) => {
       gaugeH.value = humidity;
       updateElement.innerHTML = epochToDateTime(timestamp);
     });
-/*
+
     // DELETE DATA
     // Add event listener to open modal when click on "Delete Data" button
     deleteButtonElement.addEventListener('click', e =>{
@@ -219,7 +189,7 @@ const setupUI = (user) => {
       e.preventDefault;
       deleteModalElement.style.display="block";
     });
-*/
+
     // Add event listener when delete form is submited
     deleteDataFormElement.addEventListener('submit', (e) => {
       // delete data (readings)
@@ -230,15 +200,6 @@ const setupUI = (user) => {
     var lastReadingTimestamp; //saves last timestamp displayed on the table
     // Function that creates the table with the first 100 readings
     function createTable(){
-
-      //removo se nao der certo
-        // Toggle DOM elements
-      tableContainerElement.style.display = 'block';
-      viewDataButtonElement.style.display ='none';
-      hideDataButtonElement.style.display ='inline-block';
-      loadDataButtonElement.style.display = 'inline-block'
-
-
       // append all data to the table
       var firstRun = true;
       dbRef.orderByKey().limitToLast(100).on('child_added', function(snapshot) {
@@ -248,8 +209,6 @@ const setupUI = (user) => {
           var temperature = jsonData.temperature;
           var humidity = jsonData.humidity;
           var pressure = jsonData.pressure;
-          var ad = jsonData.ad;
-//add ad variable
           var timestamp = jsonData.timestamp;
           var content = '';
           content += '<tr>';
@@ -257,8 +216,6 @@ const setupUI = (user) => {
           content += '<td>' + temperature + '</td>';
           content += '<td>' + humidity + '</td>';
           content += '<td>' + pressure + '</td>';
-          content += '<td>' + ad + '</td>';
-//ad
           content += '</tr>';
           $('#tbody').prepend(content);
           // Save lastReadingTimestamp --> corresponds to the first timestamp on the returned snapshot data
@@ -296,8 +253,6 @@ const setupUI = (user) => {
               var temperature = element.temperature;
               var humidity = element.humidity;
               var pressure = element.pressure;
-              var ad = element.ad;
-
               var timestamp = element.timestamp;
               var content = '';
               content += '<tr>';
@@ -305,8 +260,6 @@ const setupUI = (user) => {
               content += '<td>' + temperature + '</td>';
               content += '<td>' + humidity + '</td>';
               content += '<td>' + pressure + '</td>';
-              content += '<td>' + ad + '</td>';
-//ad
               content += '</tr>';
               $('#tbody').append(content);
             }
@@ -316,11 +269,13 @@ const setupUI = (user) => {
     }
 
     viewDataButtonElement.addEventListener('click', (e) =>{
+      // Toggle DOM elements
+      tableContainerElement.style.display = 'block';
+      viewDataButtonElement.style.display ='none';
+      hideDataButtonElement.style.display ='inline-block';
+      loadDataButtonElement.style.display = 'inline-block'
       createTable();
     });
-
-
-  
 
     loadDataButtonElement.addEventListener('click', (e) => {
       appendToTable();
@@ -335,24 +290,9 @@ const setupUI = (user) => {
   // IF USER IS LOGGED OUT
   } else{
     // toggle UI elements
-
-    signupElement.style.display = 'block';
-
     loginElement.style.display = 'block';
     authBarElement.style.display ='none';
     userDetailsElement.style.display ='none';
     contentElement.style.display = 'none';
   }
-  
-  document.onload = createTable();
-
-}// tenho que adicionar tudo que quero dentro dessas chaves (acho)
-
-function teste(){
-    // Toggle DOM elements
-    tableContainerElement.style.display = 'block';
-    viewDataButtonElement.style.display ='none';
-    hideDataButtonElement.style.display ='inline-block';
-    loadDataButtonElement.style.display = 'inline-block'
 }
-

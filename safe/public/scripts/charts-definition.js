@@ -2,17 +2,10 @@
 window.addEventListener('load', onload);
 
 function onload(event){
-  chartAD = createADChart();
   chartT = createTemperatureChart();
   chartH = createHumidityChart();
   chartP = createPressureChart();
 }
-
-Highcharts.setOptions({
-  time: {
-    timezone: 'America/Cuiaba'
-  }
-});
 
 // Create Temperature Chart
 function createTemperatureChart() {
@@ -23,7 +16,7 @@ function createTemperatureChart() {
     },
     series: [
       {
-        name: 'Hora'
+        name: 'BME280'
       }
     ],
     title: { 
@@ -43,7 +36,7 @@ function createTemperatureChart() {
     },
     yAxis: {
       title: { 
-        text: 'Temperatura' 
+        text: 'Temperature Celsius Degrees' 
       }
     },
     credits: { 
@@ -61,7 +54,7 @@ function createHumidityChart(){
       type: 'spline'  
     },
     series: [{
-      name: 'Hora'
+      name: 'BME280'
     }],
     title: { 
       text: undefined
@@ -83,7 +76,7 @@ function createHumidityChart(){
     },
     yAxis: {
       title: { 
-        text: 'Umidade (%)' 
+        text: 'Humidity (%)' 
       }
     },
     credits: { 
@@ -101,7 +94,7 @@ function createPressureChart() {
       type: 'spline'  
     },
     series: [{
-      name: 'Hora'
+      name: 'BME280'
     }],
     title: { 
       text: undefined
@@ -123,7 +116,7 @@ function createPressureChart() {
     },
     yAxis: {
       title: { 
-        text: 'Pressão (hPa)' 
+        text: 'Pressure (hPa)' 
       }
     },
     credits: { 
@@ -132,46 +125,3 @@ function createPressureChart() {
   });
   return chart;
 }
-
-
-
-// Create AD Chart
-function createADChart() {
-  var chart = new Highcharts.Chart({
-    chart:{ 
-      renderTo:'chart-ad',
-      type: 'spline'  
-    },
-    series: [{
-      name: 'Hora'
-    }],
-    title: { 
-      text: undefined
-    },    
-    plotOptions: {
-      line: { 
-        animation: false,
-        dataLabels: { 
-          enabled: true 
-        }
-      },
-      series: { 
-        color: '#1639ab' 
-      }
-    },
-    xAxis: {
-      type: 'datetime',
-      dateTimeLabelFormats: { second: '%H:%M:%S' }
-    },
-    yAxis: {
-      title: { 
-        text: 'AD (m)' 
-      }
-    },
-    credits: { 
-      enabled: false 
-    }
-  });
-  return chart;
-}
-

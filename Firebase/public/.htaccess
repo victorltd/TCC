@@ -1,0 +1,4 @@
+RewriteEngine on
+
+RewriteRule ^historico historico.html [NC]
+RewriteRule ^graficos graficos.html [NC]

@@ -54,3 +54,22 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   modal.find('.modal-title').text('New message to ' + recipient)
   modal.find('.modal-body input').val(recipient)
 })
+
+/*
+function closeSelf(){
+  // do something
+
+  if(condition satisfied){
+     alert("conditions satisfied, submiting the form.");
+     document.forms['certform'].submit();
+     window.close();
+  }else{
+     alert("conditions not satisfied, returning to form");    
+  }
+}
+*/
+function closeDialog() {
+  let d = document.getElementById('d')
+  d.style.display = "none"
+  d.close()
+}   

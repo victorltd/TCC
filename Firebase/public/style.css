@@ -134,9 +134,20 @@ th {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: #474e5d;
+    background-color: #1e2026;
+    opacity: 0.95;
     padding-top: 50px;
 }
+
+.modal-backdrop {
+    /* bug fix - no overlay */    
+    display: none;    
+}
+/*
+.modal{
+  background-color: rgba(10,10,10,0.45);
+}
+*/
   
 /* Modal Content/Box */
 .modal-content {
@@ -260,3 +271,8 @@ hr {
                                                     padding: 0 2rem 0 calc(var(--nav-width) + 2rem)}.header_img{width: 40px;height: 40px}.header_img img{width: 45px}.l-navbar{left: 0;
                                                         padding: 1rem 1rem 0 0}.show{width: calc(var(--nav-width) + 156px)}.body-pd{padding-left: calc(var(--nav-width) + 188px)}}
   
+
+
+.modal-backdrop {
+  z-index: -1;
+}
