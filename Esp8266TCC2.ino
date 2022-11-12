@@ -19,36 +19,23 @@
 // Provide the RTDB payload printing info and other helper functions.
 #include "addons/RTDBHelper.h"
 
-/*
+
 // Insert your network credentials
-#define WIFI_SSID "F-Carranca_01"
-#define WIFI_PASSWORD "fcarranca01"
-*/
-
-/*
-#define WIFI_SSID "Wifi Home - KASATECH_2,4G"
-#define WIFI_PASSWORD "wifihomesenhAz"
-*/
 
 
-#define WIFI_SSID "agr_hangar"
-//#define WIFI_PASSWORD "lunna0611"
+#define WIFI_SSID "yourssid"
+#define WIFI_PASSWORD "yourpassword"
 
-
-/*
-#define WIFI_SSID "Lunna - JRTELECOM"
-#define WIFI_PASSWORD "lunna0611"
-*/
 
 // Insert Firebase project API Key
-#define API_KEY "AIzaSyADroxCPmfIUYnuVKib6yzj-PZDDpyphds"
+#define API_KEY "insert-api-keyhere"
 
 // Insert Authorized Email and Corresponding Password
-#define USER_EMAIL "victoraugusto1910@gmail.com"
-#define USER_PASSWORD "estacaoaero123"
+#define USER_EMAIL "youremail@gmail.com"
+#define USER_PASSWORD "yourpassword"
 
 // Insert RTDB URLefine the RTDB URL
-#define DATABASE_URL "estacaoaero-default-rtdb.firebaseio.com"
+#define DATABASE_URL "your.firebaseio.com"
 
 // Define NTP properties, for the correctly hour on the charts(brazilian hour)
 #define NTP_OFFSET   60 * 60      // In seconds
@@ -120,7 +107,7 @@ void initBME(){
 
 // Initialize WiFi
 void initWiFi() {
-  WiFi.begin(WIFI_SSID, NULL);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("Connecting to WiFi ..");
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print('.');
