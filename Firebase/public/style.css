@@ -22,8 +22,8 @@ body {
 .topnav {
     overflow: hidden;
     color: mintcream;
-    font-size: 1rem;
-    padding: 5px;
+    font-size: 20px;
+    padding: px;
 }
 
 .topnav-1 {
@@ -32,6 +32,7 @@ body {
     background-color: #f79824;
     font-size: 1rem;
     padding: 5px;
+    height: 50px;
 }
 
 #authentication-bar{
@@ -215,13 +216,14 @@ hr {
     background: #555; 
   } @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
   :root{
-    --header-height: 3.5rem;
-    --nav-width: 70px;
+    --header-height: 4rem;
+    --nav-width: 70px; /*tamanho do sidebar*/
     --first-color: #31393c;
     --first-color-light: #f79824;
     --white-color: #2176ff; /*cor do background acima do topbar*/
     --body-font: 'Nunito', sans-serif;
-    --normal-font-size: 1rem;--z-fixed: 100}*,
+    --normal-font-size: 50pt;--z-fixed: 20}*,
+    /*o header-height e o tamanho da barra azul*/
 ::before,
 ::after{box-sizing: border-box}body{position: relative;
     margin: var(--header-height) 0 0 0;
@@ -237,7 +239,7 @@ hr {
         padding: 0 1rem;background-color: var(--white-color);
         z-index: var(--z-fixed);
         transition: .5s}.header_toggle{color: var(--first-color);
-            font-size: 1.5rem;
+            font-size: 1.25rem; /*tamanho do icone que abre e fecha o sidebar*/
             cursor: pointer}.header_img{width: 35px;
                 height: 35px;display: flex;
                 justify-content: center;
@@ -275,4 +277,42 @@ hr {
 
 .modal-backdrop {
   z-index: -1;
+}
+
+/*teste*/
+
+.circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 50px;
+}
+  
+.rounded {
+    width: 130px;
+    height: 130px;
+    border-radius: 25%;
+    float: left;
+    margin-right: 50px;
+}
+  
+.square {
+    width: 130px;
+    height: 130px;
+    border-radius: 0%;
+    float: left;
+    margin-right: 50px;
+}
+  
+#circle {
+    background-color: #e28915;
+}
+  
+#rounded {
+    background-color: #5DADE2;
+}
+  
+#square {
+    background-color: #58D68D;
 }

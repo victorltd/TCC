@@ -49,8 +49,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <!-- include Gauges Javascript library-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
-
   </head>
 
   <!--se der merda, descomento esse body abaixo-->
@@ -152,34 +150,31 @@
     <!--CONTENT (SENSOR READINGS)-->
     <div class="content-sign-in" id="content-sign-in" style="display: none;">
 
+      <!--LAST UPDATE-->
+      <!--
+      <p>
+        Cards: <input type="checkbox" id="cards-checkbox" name="cards-checkbox" checked>
+        Gauges: <input type="checkbox" id="gauges-checkbox" name="gauges-checkbox" checked>
+        Charts: <input type="checkbox" id="charts-checkbox" name="charts-checkbox" unchecked>
+      </p>
+    -->
+
+<!--quando isso sumir, deve voltar a funcionar :) -->
+
+      
 
 
-<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" >
-  <label class="btn btn-outline-danger" for="btnradio1">Sexta-feira</label>
-
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btnradio2">Sábado</label>
-
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" checked>
-  <label class="btn btn-outline-success " for="btnradio3">Domingo</label>
-
-  <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Outras edições
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">2019</a></li>
-    <li><a class="dropdown-item" href="#">2018</a></li>
-    <li><a class="dropdown-item" href="#">2017</a></li>
-  </ul>
-</div>
-
-<br><br><br>
+    
 
 
-
-
-   
+    <!--BUTTONS TO HANDLE DATA-->
+    <p>
+      <!--View data button-->
+      <button id="view-data-button" >Mostrar todos os dados</button>
+      <!--Hide data button-->
+      <button id="hide-data-button" style= "display:none;">Esconder tabela</button>
+    
+    </p>
 
     <!--Modal to delete data-->
     <div id="delete-modal" class="modal" sytle="display:none">
@@ -213,42 +208,6 @@
         </table>
         <p><button id="load-data" style= "display:none;">Mostrar mais</button></p>
       </div>
-
-
-      <div class="card" id="table-sabado" style= "display:none;">
-        <table id="tabSabado">
-          <thead>
-            <tr>
-              <th>Tempo</th>
-              <th>Temp (ºC)</th>
-              <th>Umid (%)</th>
-              <th>Pres (hPa)</th>
-              <th>AD (m)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- aqui vão as linhas da tabela -->
-          </tbody>
-        </table>
-      </div>
-
-      <div class="card" id="table-sexta" style= "display:none;">
-        <table id="tabDomingo">
-          <thead>
-            <tr>
-              <th>Tempo</th>
-              <th>Temp (ºC)</th>
-              <th>Umid (%)</th>
-              <th>Pres (hPa)</th>
-              <th>AD (m)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- aqui vão as linhas da tabela -->
-          </tbody>
-        </table>
-      </div>
-
     </div>
 
   </div>
@@ -266,8 +225,6 @@
     <script src="scripts/gauges-definition.js"></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/funcoes.js"></script>
-    <script src="scripts/tabelas.js"></script>
-
 
 
   </body>

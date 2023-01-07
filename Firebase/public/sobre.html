@@ -49,8 +49,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <!-- include Gauges Javascript library-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
-
   </head>
 
   <!--se der merda, descomento esse body abaixo-->
@@ -61,23 +59,22 @@
           <header class="header" id="header">
                 <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
                 <div class="topnav">
-                  <h5> <i class="fa-solid fa-plane"></i> Estação Meteorológica do Aerodesign  <i class="fa-solid fa-plane"></i> </h5>
+                  <h5> <i class="fa-solid fa-plane"></i> Estação Meteorológica do Aerodesign <i class="fa-solid fa-plane"></i> </h5>
                 </div>
                 <div class="header_img"> <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt=""> </div>
           </header>
           <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="sobre.html" class="nav_link"> <i class='bx bx-info-circle nav_logo-icon'></i> <span class="nav_name">Sobre o projeto</span> </a>
+                <div> <a href="sobre.html" class="nav_link active"> <i class='bx bx-info-circle nav_logo-icon'></i> <span class="nav_name">Sobre o projeto</span> </a>
                     <div class="nav_list"> 
                       <a href="/" class="nav_link"> <i class='bx bx-home-alt nav_icon'></i> <span class="nav_name">Início</span> </a> 
-                      <a href="historico.html" class="nav_link active"> <i class='bx bx-history nav_icon'></i><span class="nav_name">Histórico</span> </a>
+                      <a href="historico.html" class="nav_link "> <i class='bx bx-history nav_icon'></i><span class="nav_name">Histórico</span> </a>
                       <a href="graficos.html" class="nav_link"> <i class='bx bx-chart nav_icon'></i><span class="nav_name">Gráficos</span> </a> 
                       <a href="pontuacoes.html " class="nav_link "> <i class='bx bx-medal nav_icon'></i><span class="nav_name">Pontuações</span> </a> 
                       </div>
                 </div> <a href="#" id="logout-link" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
             </nav>
         </div>
-            <!--Container Main start-->
     
             <div class="height-100 bg-light">
     <br><br><br>
@@ -91,13 +88,7 @@
     <!--sidebar-->
 
   
-    <!--AUTHENTICATION BAR (USER DETAILS/LOGOUT BUTTON)-->
-    <div id="authentication-bar" style="display: none;">
-      <p><span id="authentication-status">Usuário logado com:</span>
-        <span id="user-details">USEREMAIL</span>
-        <!--a href="#" id="logout-link">(logout)</a-->
-      </p>
-    </div>
+  
 
     <!--LOGIN FORM-->
     <form id="login-form" style="display: none;">
@@ -152,111 +143,58 @@
     <!--CONTENT (SENSOR READINGS)-->
     <div class="content-sign-in" id="content-sign-in" style="display: none;">
 
+      <!--LAST UPDATE-->
+      <!--
+      <p>
+        Cards: <input type="checkbox" id="cards-checkbox" name="cards-checkbox" checked>
+        Gauges: <input type="checkbox" id="gauges-checkbox" name="gauges-checkbox" checked>
+        Charts: <input type="checkbox" id="charts-checkbox" name="charts-checkbox" unchecked>
+      </p>
+    -->
+
+<!--quando isso sumir, deve voltar a funcionar :) -->
+  <br>
+  <h3>Sobre o Projeto</h3>
+<br>
+  <h5>O Projeto Estação Meteorológica do Aerodesign é parte de um trabalho de Conclusão de Curso, de Engenharia da Computação
+    da Universidade Federal do Vale do São Francisco.
+<br>
+    Desenvolvido pelo aluno Victor Augusto, do 10º periodo do curso e também competidor na competição SAE Brasil Aerodesign.
+    <br><br>
+    &rarr;  Acesse meu  <a href="https://drive.google.com/file/d/1wmnYdteFvSmChnv4fWNVJ2mvwfD_GLmY/view?usp=sharing" target="_blank">currículo</a>
+     ou <a href="https://github.com/victorltd/" target="_blank">Github</a>  &larr;
 
 
-<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" >
-  <label class="btn btn-outline-danger" for="btnradio1">Sexta-feira</label>
+  </h5>
 
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btnradio2">Sábado</label>
+  <h6>
+    <br><br>
+    Ao observar a lacuna existente na Competição SAE Brasil Aerodesign no que tange
+    às medições meteorológicas e seu impacto em todas as equipes, notou-se a viabilidade
+    de criar um meio pelo qual os envolvidos na SAE Brasil Aerodesign, pudessem acessar
+    de maneira rápida os principais parâmetros meteorológicos no contexto da competição
 
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" checked>
-  <label class="btn btn-outline-success " for="btnradio3">Domingo</label>
+    <br><br>
+    Até então, esses dados eram coletados de uma estação comercial instalada no Aeroporto Internacional de São José dos Campos e 
+    divulgada para os competidores, a cada trinta minutos, aproximadamente, em uma folha de papel fixada em um mural. Porém, isso pode
+     levar ás equipes que voarem nesse intervalo de tempo não terem a certeza dos parâmetros meteorológicos, uma vez que acontecem 
+     flutuações climáticas, e dessa forma não sabem exatamente a quantidade de carga a carregar, para pontuar o máximo possível no
+      quesito acuracidade.
+    <br><br>
+  <img src="img/ad2019.jpg" alt="Medição no ano de 2019" width="500" height="300">
 
-  <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Outras edições
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">2019</a></li>
-    <li><a class="dropdown-item" href="#">2018</a></li>
-    <li><a class="dropdown-item" href="#">2017</a></li>
-  </ul>
-</div>
+    <br>
+      O trabalho tem como foco o desenvolvimento da aplicação web
+      para uso durante a Competição SAE Brasil Aerodesign, que ajudará muitas equipes a
+      tomarem decisões estratégicas em relação a quantidade de carga que suas aeronaves irão
+      carregar, criando assim um produto que poderá ser implementado e largamente usado nas próximas competições e ajudando a todos os
+      envolvidos
 
-<br><br><br>
-
-
-
-
-   
-
-    <!--Modal to delete data-->
-    <div id="delete-modal" class="modal" sytle="display:none">
-      <span onclick = "document.getElementById('delete-modal').style.display='none'" class="close" title="Close Modal">×</span>
-      <form id= "delete-data-form" class="modal-content" action="/">
-        <div class="container">
-          <h1>Delete Data</h1>
-          <p>Are you sure you want to delete all data from database?</p>
-          <div class="clearfix">
-            <button type="button" onclick="document.getElementById('delete-modal').style.display='none'" class="cancelbtn">Cancel</button>
-            <button type="submit" onclick="document.getElementById('delete-modal').style.display='none'" class="deletebtn">Delete</button>
-          </div>
-        </div>
-      </form>
-    </div>
-
-    <!--TABLE WITH ALL DATA-->
-    <div class ="cards">
-      <div class="card" id="table-container" style= "display:inline;">
-        <table id="readings-table">
-            <tr id="theader">
-              <th>Tempo</th>
-              <th>Temp (ºC)</th>
-              <th>Umid (%)</th>
-              <th>Pres (hPa)</th>
-              <th>AD (m)</th>
-
-            </tr>
-            <tbody id="tbody">
-            </tbody>
-        </table>
-        <p><button id="load-data" style= "display:none;">Mostrar mais</button></p>
-      </div>
-
-
-      <div class="card" id="table-sabado" style= "display:none;">
-        <table id="tabSabado">
-          <thead>
-            <tr>
-              <th>Tempo</th>
-              <th>Temp (ºC)</th>
-              <th>Umid (%)</th>
-              <th>Pres (hPa)</th>
-              <th>AD (m)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- aqui vão as linhas da tabela -->
-          </tbody>
-        </table>
-      </div>
-
-      <div class="card" id="table-sexta" style= "display:none;">
-        <table id="tabDomingo">
-          <thead>
-            <tr>
-              <th>Tempo</th>
-              <th>Temp (ºC)</th>
-              <th>Umid (%)</th>
-              <th>Pres (hPa)</th>
-              <th>AD (m)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- aqui vão as linhas da tabela -->
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-
-  </div>
-
+    </h6>
+  
 
               
               
-        </div>
 
 
 
@@ -266,9 +204,11 @@
     <script src="scripts/gauges-definition.js"></script>
     <script src="scripts/index.js"></script>
     <script src="scripts/funcoes.js"></script>
-    <script src="scripts/tabelas.js"></script>
 
 
+        
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="js/main.js"></script>
 
   </body>
 

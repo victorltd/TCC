@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Papaparse Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js" integrity="sha512-EbdJQSugx0nVWrtyK3JdQQ/03mS3Q1UiAhRtErbwl1YL/+e2hZdlIcSURxxh7WXHTzn83sjlh2rysACoJGfb6g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <table id="myTable">
+        <thead>
+          <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>city</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- aqui vão as linhas da tabela -->
+        </tbody>
+      </table>
+      
+
+
+<script>
+    // lê o arquivo CSV
+Papa.parse('estacao.csv', {
+  download: true,
+  header: true,
+  complete: function(results) {
+    // results.data contém um array de objetos, cada um representando uma linha do arquivo CSV
+    var tabela = document.getElementById('myTable');
+    var tbody = tabela.getElementsByTagName('tbody')[0];
+    for (var i = 0; i < results.data.length; i++) {
+      var linha = results.data[i];
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + linha._key + '</td><td>' + linha.ad + '</td><td>' + linha.humidity + '</td>';
+      tbody.appendChild(tr);
+    }
+  }
+});
+
+</script>
+</body>
+</html>

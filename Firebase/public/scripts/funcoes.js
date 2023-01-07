@@ -73,3 +73,146 @@ function closeDialog() {
   d.style.display = "none"
   d.close()
 }   
+
+
+
+
+
+
+
+
+
+
+//lembrar de apagar essas funcoes
+
+// 1 bateria REGULAR
+document.getElementById("1R").onclick = function() {
+  //1 bateria
+  document.getElementById("1batR").style.display = "inline";
+  document.getElementById("1batM").style.display = "none";
+  document.getElementById("1batMA").style.display = "none";
+  //2bateria
+  document.getElementById("2batR").style.display = "none";
+  document.getElementById("2batM").style.display = "none";
+  document.getElementById("2batA").style.display = "none";
+  //3bateria
+  document.getElementById("3batR").style.display = "none";
+  document.getElementById("3batM").style.display = "none";
+  document.getElementById("3batA").style.display = "none";
+  //4bateria
+   document.getElementById("4batR").style.display = "none";
+   document.getElementById("4batM").style.display = "none";
+   document.getElementById("4batA").style.display = "none";
+
+
+
+
+}
+
+// 1 bateria MICRO
+document.getElementById("1M").onclick = function() {
+  //1 bateria
+  document.getElementById("1batR").style.display = "none";
+  document.getElementById("1batM").style.display = "inline";
+  document.getElementById("1batA").style.display = "none";
+  //2bateria
+  document.getElementById("2batR").style.display = "none";
+  document.getElementById("2batM").style.display = "none";
+  document.getElementById("2batA").style.display = "none";
+  //3bateria
+  document.getElementById("3batR").style.display = "none";
+  document.getElementById("3batM").style.display = "none";
+  document.getElementById("3batA").style.display = "none";
+  //4bateria
+   document.getElementById("4batR").style.display = "none";
+   document.getElementById("4batM").style.display = "none";
+   document.getElementById("4batA").style.display = "none";
+
+
+}
+// 1 bateria ADVANCED
+document.getElementById("1A").onclick = function() {
+  //1 bateria
+  document.getElementById("1batR").style.display = "none";
+  document.getElementById("1batM").style.display = "none";
+  document.getElementById("1batA").style.display = "inline";
+  //2bateria
+  document.getElementById("2batR").style.display = "none";
+  document.getElementById("2batM").style.display = "none";
+  document.getElementById("2batA").style.display = "none";
+  //3bateria
+  document.getElementById("3batR").style.display = "none";
+  document.getElementById("3batM").style.display = "none";
+  document.getElementById("3batA").style.display = "none";
+  //4bateria
+   document.getElementById("4batR").style.display = "none";
+   document.getElementById("4batM").style.display = "none";
+   document.getElementById("4batA").style.display = "none";
+
+
+}
+
+// 2 bateria REGULAR
+document.getElementById("2R").onclick = function() {
+  //1 bateria
+  document.getElementById("1batR").style.display = "none";
+  document.getElementById("1batM").style.display = "none";
+  document.getElementById("1batA").style.display = "none";
+  //2bateria
+  document.getElementById("2batR").style.display = "inline";
+  document.getElementById("2batM").style.display = "none";
+  document.getElementById("2batA").style.display = "none";
+  //3bateria
+  document.getElementById("3batR").style.display = "none";
+  document.getElementById("3batM").style.display = "none";
+  document.getElementById("3batA").style.display = "none";
+  //4bateria
+   document.getElementById("4batR").style.display = "none";
+   document.getElementById("4batM").style.display = "none";
+   document.getElementById("4batA").style.display = "none";
+
+}
+
+// 2 bateria MICRO
+document.getElementById("2M").onclick = function() {
+  //1 bateria
+  document.getElementById("1batR").style.display = "none";
+  document.getElementById("1batM").style.display = "none";
+  document.getElementById("1batA").style.display = "none";
+  //2bateria
+  document.getElementById("2batR").style.display = "none";
+  document.getElementById("2batM").style.display = "inline";
+  document.getElementById("2batA").style.display = "none";
+  //3bateria
+  document.getElementById("3batR").style.display = "none";
+  document.getElementById("3batM").style.display = "none";
+  document.getElementById("3batA").style.display = "none";
+  //4bateria
+   document.getElementById("4batR").style.display = "none";
+   document.getElementById("4batM").style.display = "none";
+   document.getElementById("4batA").style.display = "none";
+
+
+}
+
+// 2 bateria ADVANCED
+document.getElementById("2A").onclick = function() {
+  //1 bateria
+  document.getElementById("1batR").style.display = "none";
+  document.getElementById("1batM").style.display = "none";
+  document.getElementById("1batA").style.display = "none";
+  //2bateria
+  document.getElementById("2batR").style.display = "none";
+  document.getElementById("2batM").style.display = "none";
+  document.getElementById("2batA").style.display = "inline";
+  //3bateria
+  document.getElementById("3batR").style.display = "none";
+  document.getElementById("3batM").style.display = "none";
+  document.getElementById("3batA").style.display = "none";
+  //4bateria
+   document.getElementById("4batR").style.display = "none";
+   document.getElementById("4batM").style.display = "none";
+   document.getElementById("4batA").style.display = "none";
+
+
+}

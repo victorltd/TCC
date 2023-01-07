@@ -12,7 +12,7 @@ function epochToDateTime(epochTime){
     ("00" + epochDate.getHours()).slice(-2) + ":" +
     ("00" + epochDate.getMinutes()).slice(-2) + ":" +
     ("00" + epochDate.getSeconds()).slice(-2);
-  console.log(dateTime)
+  //console.log(dateTime)
   return dateTime;
 }
 
@@ -233,9 +233,9 @@ const setupUI = (user) => {
 
       //removo se nao der certo
         // Toggle DOM elements
-      tableContainerElement.style.display = 'block';
-      viewDataButtonElement.style.display ='none';
-      hideDataButtonElement.style.display ='inline-block';
+      tableContainerElement.style.display = 'inline-block';
+      //viewDataButtonElement.style.display ='none';//era none
+      //hideDataButtonElement.style.display ='inline-block';
       loadDataButtonElement.style.display = 'inline-block'
 
 
@@ -315,9 +315,14 @@ const setupUI = (user) => {
       });
     }
 
+    /*
     viewDataButtonElement.addEventListener('click', (e) =>{
       createTable();
     });
+    */
+
+    document.onload = createTable();
+
 
 
   
@@ -327,10 +332,11 @@ const setupUI = (user) => {
     });
 
     hideDataButtonElement.addEventListener('click', (e) => {
-      tableContainerElement.style.display = 'none';
+      tableContainerElement.style.display = 'none'; //era none
       viewDataButtonElement.style.display = 'inline-block';
       hideDataButtonElement.style.display = 'none';
     });
+    
 
   // IF USER IS LOGGED OUT
   } else{

@@ -152,104 +152,25 @@
     <!--CONTENT (SENSOR READINGS)-->
     <div class="content-sign-in" id="content-sign-in" style="display: none;">
 
+      <div class="card" >
 
-
-<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" >
-  <label class="btn btn-outline-danger" for="btnradio1">Sexta-feira</label>
-
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-  <label class="btn btn-outline-warning" for="btnradio2">Sábado</label>
-
-  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" checked>
-  <label class="btn btn-outline-success " for="btnradio3">Domingo</label>
-
-  <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Outras edições
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">2019</a></li>
-    <li><a class="dropdown-item" href="#">2018</a></li>
-    <li><a class="dropdown-item" href="#">2017</a></li>
-  </ul>
-</div>
-
-<br><br><br>
-
-
-
-
-   
-
-    <!--Modal to delete data-->
-    <div id="delete-modal" class="modal" sytle="display:none">
-      <span onclick = "document.getElementById('delete-modal').style.display='none'" class="close" title="Close Modal">×</span>
-      <form id= "delete-data-form" class="modal-content" action="/">
-        <div class="container">
-          <h1>Delete Data</h1>
-          <p>Are you sure you want to delete all data from database?</p>
-          <div class="clearfix">
-            <button type="button" onclick="document.getElementById('delete-modal').style.display='none'" class="cancelbtn">Cancel</button>
-            <button type="submit" onclick="document.getElementById('delete-modal').style.display='none'" class="deletebtn">Delete</button>
-          </div>
-        </div>
-      </form>
-    </div>
-
-    <!--TABLE WITH ALL DATA-->
-    <div class ="cards">
-      <div class="card" id="table-container" style= "display:inline;">
-        <table id="readings-table">
-            <tr id="theader">
-              <th>Tempo</th>
-              <th>Temp (ºC)</th>
-              <th>Umid (%)</th>
-              <th>Pres (hPa)</th>
-              <th>AD (m)</th>
-
-            </tr>
-            <tbody id="tbody">
-            </tbody>
-        </table>
-        <p><button id="load-data" style= "display:none;">Mostrar mais</button></p>
+      <table id="myTable">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>dado</th>
+            <th>nome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- aqui vão as linhas da tabela -->
+        </tbody>
+      </table>
+      
       </div>
+    
 
-
-      <div class="card" id="table-sabado" style= "display:none;">
-        <table id="tabSabado">
-          <thead>
-            <tr>
-              <th>Tempo</th>
-              <th>Temp (ºC)</th>
-              <th>Umid (%)</th>
-              <th>Pres (hPa)</th>
-              <th>AD (m)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- aqui vão as linhas da tabela -->
-          </tbody>
-        </table>
-      </div>
-
-      <div class="card" id="table-sexta" style= "display:none;">
-        <table id="tabDomingo">
-          <thead>
-            <tr>
-              <th>Tempo</th>
-              <th>Temp (ºC)</th>
-              <th>Umid (%)</th>
-              <th>Pres (hPa)</th>
-              <th>AD (m)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- aqui vão as linhas da tabela -->
-          </tbody>
-        </table>
-      </div>
-
-    </div>
+    
 
   </div>
 
