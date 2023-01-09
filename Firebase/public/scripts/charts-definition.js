@@ -7,12 +7,13 @@ function onload(event){
   chartH = createHumidityChart();
   chartP = createPressureChart();
 }
-
+/*
 Highcharts.setOptions({
   time: {
-    timezone: 'America/Cuiaba'
+      timezone: 'America/Brasilia'
   }
 });
+*/
 
 // Create Temperature Chart
 function createTemperatureChart() {

@@ -56,7 +56,7 @@ body {
 }
 
 .cards {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
     margin-bottom: 10px;
     display: grid;
@@ -315,4 +315,21 @@ hr {
   
 #square {
     background-color: #58D68D;
+}
+
+/*so pra eu ver o grafico*/
+#container {
+    max-width: 800px;
+    height: 400px;
+
+}
+
+
+.cards {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
 }
