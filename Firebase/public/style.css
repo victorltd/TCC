@@ -333,3 +333,29 @@ hr {
     grid-gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
 }
+
+.card_teste {
+    background-color: white;
+    box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5);
+    padding: 5%;
+    margin-left: 60px;
+    margin-right: 60px;
+    text-align: left;
+
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}

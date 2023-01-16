@@ -1,93 +1,209 @@
-<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">Menu</span>
-                </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
-                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                    </li>
-                    <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
-                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                    </li>
-                </ul>
-                <hr>
-                <div class="dropdown pb-4">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">loser</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
-                    </ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Estação Meteorológica do Aerodesign</title>
+
+    <!-- include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+
+    <!-- include only the Firebase features as you need -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+    <script>
+      // Replace with your app config object
+      const firebaseConfig = {
+        apiKey: "AIzaSyADroxCPmfIUYnuVKib6yzj-PZDDpyphds",
+    authDomain: "estacaoaero.firebaseapp.com",
+    databaseURL: "https://estacaoaero-default-rtdb.firebaseio.com",
+    projectId: "estacaoaero",
+    storageBucket: "estacaoaero.appspot.com",
+    messagingSenderId: "365984633257",
+    appId: "1:365984633257:web:2527e4d335c07af10334b8",
+    measurementId: "G-JDBGQZXLSG"
+      };
+
+      // Initialize firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Make auth and database references
+      const auth = firebase.auth();
+      const db = firebase.database();
+
+    </script>
+
+    <!-- include highchartsjs to build the charts-->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- include to use jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.7/all/gauge.min.js"></script>
+    <!--reference for favicon-->
+    <link rel="icon" type="image/png" href="icon.png">
+    <!--reference a stylesheet-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- esses tres de baixo vieram da parte do sidebar-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <!-- include Gauges Javascript library-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </head>
+
+  <!--se der merda, descomento esse body abaixo-->
+  <!--body-->
+
+  <body className='snippet-body' >
+    <body id="body-pd" >
+          <header class="header" id="header">
+                <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+                <div class="topnav">
+                  <h5> <i class="fa-solid fa-plane"></i> Estação Meteorológica do Aerodesign <i class="fa-solid fa-plane"></i> </h5>
                 </div>
-            </div>
+                <div class="header_img"> <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt=""> </div>
+          </header>
+          <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> <a href="sobre.html" class="nav_link"> <i class='bx bx-info-circle nav_logo-icon'></i> <span class="nav_name">Sobre o projeto</span> </a>
+                    <div class="nav_list"> 
+                      <a href="/" class="nav_link"> <i class='bx bx-home-alt nav_icon'></i> <span class="nav_name">Início</span> </a> 
+                      <a href="historico.html" class="nav_link "> <i class='bx bx-history nav_icon'></i><span class="nav_name">Histórico</span> </a>
+                      <a href="graficos.html" class="nav_link"> <i class='bx bx-chart nav_icon'></i><span class="nav_name">Gráficos</span> </a> 
+                      <a href="pontuacoes.html " class="nav_link "> <i class='bx bx-medal nav_icon'></i><span class="nav_name">Pontuações</span> </a> 
+                      </div>
+                </div> <a href="#" id="logout-link" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+            </nav>
         </div>
-        <div class="col py-3">
-            <h3>Left Sidebar with Submenus</h3>
-            <p class="lead">
-                An example 2-level sidebar with collasible menu items. The menu functions like an "accordion" where only a single 
-                menu is be open at a time. While the sidebar itself is not toggle-able, it does responsively shrink in width on smaller screens.</p>
-            <ul class="list-unstyled">
-                <li><h5>Responsive</h5> shrinks in width, hides text labels and collapses to icons only on mobile</li>
-            </ul>
-        </div>
+    
+            <div class="height-100 bg-light">
+    <br><br><br>
+           
+
+    <!--top bar abaixo do topo dinamico-->
+    <div class="topnav-1">
+      <h5> Parâmetros meteorológicos da Competição SAE Brasil Aerodesign </h5>
     </div>
-</div>
+
+   
+    <!--CONTENT (SENSOR READINGS)-->
+    <!--div class="content-sign-in" id="content-sign-in" style="display: none;"-->
+
+      <!--LAST UPDATE-->
+      <!--
+      <p>
+        Cards: <input type="checkbox" id="cards-checkbox" name="cards-checkbox" checked>
+        Gauges: <input type="checkbox" id="gauges-checkbox" name="gauges-checkbox" checked>
+        Charts: <input type="checkbox" id="charts-checkbox" name="charts-checkbox" unchecked>
+      </p>
+    -->
+
+<!--quando isso sumir, deve voltar a funcionar :) -->
+<br>
+<div class="card_teste">
+<h2>Roteiro de teste de Usabilidade </h2>
+
+<br><br>
+<h3>1.1 Introdução</h3>
+<br>
+
+<h5>Este documento foi elaborado com finalidade de realizar os testes de usabilidade da aplicação desenvolvida, a 
+Estação Meteorológicado Aerodesign, trabalho apresentado à Universidade Federal do Vale do São Francisco -
+UNIVASF, Campus Juazeiro, como requisito para obtenção do título de Bacharel em
+Engenharia da Computação sob orientação do professor doutor Brauliro Gonçalves Leal.
+
+<br>Os testes aqui descritos são sucintos e diretos. Assim, todos os procedimentos e
+recursos necessários para a execução do referido teste são descritos detalhadamente a
+seguir.</h5>
+
+<br>
+<h3>1.2 Propósito do teste<br></h3>
+
+O roteiro de teste de usabilidade visa alcançar os seguintes objetivos:
+<br>
+
+<ul>
+  <li>Mensurar o grau de satisfação de professores e alunos quanto à usabilidade aplicação desenvolvida e identificar os fatores que podem influenciar na
+    satisfação do usuário frente à usabilidade.</li>
+  <li>Calcular a pontuação de usabilidade usando o System Usability Score (obtido a
+    partir de 10 questões objetivas do usuário após o uso do sistema) que será coletado
+    através de um formulário ao final deste teste de usabilidade.</li>
+</ul> 
+<br>
+<h3>1.3 Participantes<br></h3>
+
+Para a realização do teste de usabilidade, serão aptos todos os envolvidos na competição SAE Brasil Aerodesign, sendo competidores (estudantes ou professores) e
+comissão técnica (juízes e fiscais).<br><br>
+
+<h3>1.4 Tarefas implementadas <br></h3>
+
+A aplicação desenvolvida disponibiliza as seguintes atividades:
+
+<ul>
+  <li>Visualização das medições de temperatura, pressão, umidade e AD mais recente</li>
+  <li>Apresentar essas medições em forma de tabela e separadas por dia</li>
+  <li>Apresentar essas medições na forma de gráficos e separadas por dia</li>
+  <li>Verificar as pontuacões das equipes a cada atualização</li>
+</ul>
+
+<br>
+<h3>1.5 Roteiro de Testes<br></h3>
+
+<br>
+Os testes serão iniciados, para começar, você deve entrar no sistema com o seguinte link: <a href="https://estacaoaero.web.app/" target="_blank">https://estacaoaero.web.app/</a> 
+<br><br>
+
+<h5>
+Tarefa 1: Registre-se colocando um email de sua preferência e uma senha, caso já tenha login, logue com a sua conta já criada anteriormente.
+<br><br>
+Tarefa 2: Verifique se todos as medições estão aparecendo na tela inicial, são elas: Temperatura, AD, Pressão e Umidade;
+<br><br>
+
+Tarefa 3: Abra a barra lateral para navegar entre as funcionalidades, clicando no botão superior (<i class='bx bx-menu' id="header-toggle"></i>) próximo ao cabeçalho (usuário de celular devem abrir a barra lateral para navegar por outras páginas)
+<br><br>
+
+Tarefa 4: Acesse a opção "Histórico" e verifique se todas as medições do sábado estão sendo apresentadas.
+<br><br>
+
+Tarefa 5: Conforme apresentado na Tarefa 3, acesse a opção "Gráficos" e verifique se os gráficos das 4 medições estão sendo apresentados e é possível escolher outro dia para visualizar os gráficos.
+<br><br>
+
+Tarefa 6: Entre em "Pontuações", de acordo com a Tarefa 3, e escolha alguma bateria e classe para ver 
+as pontuações da mesma.
+<br><br>
+
+Tarefa 7: Por fim, deslogue da sua conta acessando o menu lateral e selecionando o último botão (<i class='bx bx-log-out nav_icon'></i>), ele pode ser acessado após abrir a barra lateral (Tarefa 3).
+</h5>
+<br><br>
+
+<h3>1.6 Questionário</h3>
+
+Após feitas todas as tarefas, responda ao seguinte questionário, composto por 10 perguntas.
+<br>
+Caso não consiga visualizar o questionário abaixo, acesse por meio do seguinte link: <a href="https://forms.gle/o8kA4V377t8eWVqg6
+" target="_blank">https://forms.gle/o8kA4V377t8eWVqg6</a> 
+
+<br>
+
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfAkgwWHNLtTnKrO1-hNtvEvM7v4FycSQoWQiTLGeCA3QuN6w/viewform?embedded=true" width="640" height="3645" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe></div>
+              
+              
+
+
+
+        <!--INCLUDE JS FILES-->
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/charts-definition.js"></script>
+    <script src="scripts/gauges-definition.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/funcoes.js"></script>
+
+
+        
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+
+</html>
