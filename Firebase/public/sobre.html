@@ -65,7 +65,7 @@
           </header>
           <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="sobre.html" class="nav_link active"> <i class='bx bx-info-circle nav_logo-icon'></i> <span class="nav_name">Sobre o projeto</span> </a>
+                <div> <a href="sobre.html" class="nav_link"> <i class='bx bx-info-circle nav_logo-icon'></i> <span class="nav_name">Sobre o projeto</span> </a>
                     <div class="nav_list"> 
                       <a href="/" class="nav_link"> <i class='bx bx-home-alt nav_icon'></i> <span class="nav_name">Início</span> </a> 
                       <a href="historico.html" class="nav_link "> <i class='bx bx-history nav_icon'></i><span class="nav_name">Histórico</span> </a>
@@ -85,63 +85,9 @@
       <h5> Parâmetros meteorológicos da Competição SAE Brasil Aerodesign </h5>
     </div>
 
-    <!--sidebar-->
-
-  
-  
-
-    <!--LOGIN FORM-->
-    <form id="login-form" style="display: none;">
-      <div class="form-elements-container">
-        <label for="input-email"><b>Email</b></label>
-        <input type="text" placeholder="Insira seu email" id="input-email" required>
-
-        <label for="input-password"><b>Senha</b></label>
-        <input type="password" placeholder="Insira sua senha" id="input-password" required>
-
-
-        <!--button  type="submit" id="login-button">Login</button-->
-        <button type="submit" class="btn btn-primary" id="login-button">Login</button>
-        <p id="error-message" style="color:red;"></p>
-      </div>
-    </form>
-
-    <form id="signup-form">
-
-      <!-- Click on Modal Button -->
-  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalForm">
-    Criar usuário
-  </button>
-
-  <!-- Modal -->
-  <div class="modal " id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Cadastro de novo usuário</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                    <div class="mb-3">Email</label>
-                        <input type="text" class="form-control" id="signup-email" name="username" placeholder="Email" required />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="signup-password" name="password" placeholder="Senha" required/>
-                    </div>
-                    
-                    <div class="modal-footer d-block">
-                        <button type="submit" class="btn btn-warning float-end" onclick="closeDialog()">Cadastrar</button>
-                    </div>
-            </div>
-        </div>
-    </div>
-  </div>
-</form>
-
-
+   
     <!--CONTENT (SENSOR READINGS)-->
-    <div class="content-sign-in" id="content-sign-in" style="display: none;">
+    <!--div class="content-sign-in" id="content-sign-in" style="display: none;"-->
 
       <!--LAST UPDATE-->
       <!--
@@ -153,47 +99,45 @@
     -->
 
 <!--quando isso sumir, deve voltar a funcionar :) -->
+<br>
+<div class="card_teste">
+<h2>Sobre o Projeto </h2>
+<br>
+<h5>O Projeto Estação Meteorológica do Aerodesign é parte de um trabalho de Conclusão de Curso, de Engenharia da Computação
+  da Universidade Federal do Vale do São Francisco.
+<br><br>
+  Desenvolvido pelo aluno Victor Augusto, do 10º período do curso e também competidor na competição SAE Brasil Aerodesign.
+  <br><br>
+  <p  class="center">
+  &rarr;  Acesse meu  <a href="https://drive.google.com/file/d/1wmnYdteFvSmChnv4fWNVJ2mvwfD_GLmY/view?usp=sharing" target="_blank">currículo</a>
+   ou <a href="https://github.com/victorltd/" target="_blank">Github</a>  &larr; </p>
+  </p>
+
+</h5>
+<h6>
+  <br><br>
+  Ao observar a lacuna existente na Competição SAE Brasil Aerodesign no que tange
+  às medições meteorológicas e seu impacto em todas as equipes, notou-se a viabilidade
+  de criar um meio pelo qual os envolvidos na SAE Brasil Aerodesign, pudessem acessar
+  de maneira rápida os principais parâmetros meteorológicos no contexto da competição
+
+  <br><br>
+  Até então, esses dados eram coletados de uma estação comercial instalada no Aeroporto Internacional de São José dos Campos e 
+  divulgada para os competidores, a cada trinta minutos, aproximadamente, em uma folha de papel fixada em um mural. Porém, isso pode
+   levar ás equipes que voarem nesse intervalo de tempo não terem a certeza dos parâmetros meteorológicos, uma vez que acontecem 
+   flutuações climáticas, e dessa forma não sabem exatamente a quantidade de carga a carregar, para pontuar o máximo possível no
+    quesito acuracidade.
+  <br><br>
+<img src="img/saemural.jpg" alt="Medição no ano de 2022" width="600" height="400" class="center">
+
   <br>
-  <h3>Sobre o Projeto</h3>
-<br>
-  <h5>O Projeto Estação Meteorológica do Aerodesign é parte de um trabalho de Conclusão de Curso, de Engenharia da Computação
-    da Universidade Federal do Vale do São Francisco.
-<br>
-    Desenvolvido pelo aluno Victor Augusto, do 10º periodo do curso e também competidor na competição SAE Brasil Aerodesign.
-    <br><br>
-    &rarr;  Acesse meu  <a href="https://drive.google.com/file/d/1wmnYdteFvSmChnv4fWNVJ2mvwfD_GLmY/view?usp=sharing" target="_blank">currículo</a>
-     ou <a href="https://github.com/victorltd/" target="_blank">Github</a>  &larr;
+    O trabalho tem como foco o desenvolvimento da aplicação web
+    para uso durante a Competição SAE Brasil Aerodesign, que ajudará muitas equipes a
+    tomarem decisões estratégicas em relação a quantidade de carga que suas aeronaves irão
+    carregar, criando assim um produto que poderá ser implementado e largamente usado nas próximas competições e ajudando a todos os
+    envolvidos
 
-
-  </h5>
-
-  <h6>
-    <br><br>
-    Ao observar a lacuna existente na Competição SAE Brasil Aerodesign no que tange
-    às medições meteorológicas e seu impacto em todas as equipes, notou-se a viabilidade
-    de criar um meio pelo qual os envolvidos na SAE Brasil Aerodesign, pudessem acessar
-    de maneira rápida os principais parâmetros meteorológicos no contexto da competição
-
-    <br><br>
-    Até então, esses dados eram coletados de uma estação comercial instalada no Aeroporto Internacional de São José dos Campos e 
-    divulgada para os competidores, a cada trinta minutos, aproximadamente, em uma folha de papel fixada em um mural. Porém, isso pode
-     levar ás equipes que voarem nesse intervalo de tempo não terem a certeza dos parâmetros meteorológicos, uma vez que acontecem 
-     flutuações climáticas, e dessa forma não sabem exatamente a quantidade de carga a carregar, para pontuar o máximo possível no
-      quesito acuracidade.
-    <br><br>
-  <img src="img/ad2019.jpg" alt="Medição no ano de 2019" width="500" height="300">
-
-    <br>
-      O trabalho tem como foco o desenvolvimento da aplicação web
-      para uso durante a Competição SAE Brasil Aerodesign, que ajudará muitas equipes a
-      tomarem decisões estratégicas em relação a quantidade de carga que suas aeronaves irão
-      carregar, criando assim um produto que poderá ser implementado e largamente usado nas próximas competições e ajudando a todos os
-      envolvidos
-
-    </h6>
-  
-
-              
+  </h6>
               
 
 

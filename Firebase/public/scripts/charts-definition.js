@@ -7,13 +7,12 @@ function onload(event){
   chartH = createHumidityChart();
   chartP = createPressureChart();
 }
-/*
+
 Highcharts.setOptions({
   time: {
-      timezone: 'America/Brasilia'
+      timezone: 'Europe/Oslo'
   }
 });
-*/
 
 // Create Temperature Chart
 function createTemperatureChart() {
@@ -175,4 +174,6 @@ function createADChart() {
   });
   return chart;
 }
+
+
 

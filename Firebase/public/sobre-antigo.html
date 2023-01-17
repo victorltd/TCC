@@ -65,7 +65,7 @@
           </header>
           <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="sobre.html" class="nav_link"> <i class='bx bx-info-circle nav_logo-icon'></i> <span class="nav_name">Sobre o projeto</span> </a>
+                <div> <a href="sobre.html" class="nav_link active"> <i class='bx bx-info-circle nav_logo-icon'></i> <span class="nav_name">Sobre o projeto</span> </a>
                     <div class="nav_list"> 
                       <a href="/" class="nav_link"> <i class='bx bx-home-alt nav_icon'></i> <span class="nav_name">Início</span> </a> 
                       <a href="historico.html" class="nav_link "> <i class='bx bx-history nav_icon'></i><span class="nav_name">Histórico</span> </a>
@@ -85,9 +85,63 @@
       <h5> Parâmetros meteorológicos da Competição SAE Brasil Aerodesign </h5>
     </div>
 
-   
+    <!--sidebar-->
+
+  
+  
+
+    <!--LOGIN FORM-->
+    <form id="login-form" style="display: none;">
+      <div class="form-elements-container">
+        <label for="input-email"><b>Email</b></label>
+        <input type="text" placeholder="Insira seu email" id="input-email" required>
+
+        <label for="input-password"><b>Senha</b></label>
+        <input type="password" placeholder="Insira sua senha" id="input-password" required>
+
+
+        <!--button  type="submit" id="login-button">Login</button-->
+        <button type="submit" class="btn btn-primary" id="login-button">Login</button>
+        <p id="error-message" style="color:red;"></p>
+      </div>
+    </form>
+
+    <form id="signup-form">
+
+      <!-- Click on Modal Button -->
+  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalForm">
+    Criar usuário
+  </button>
+
+  <!-- Modal -->
+  <div class="modal " id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cadastro de novo usuário</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <div class="mb-3">Email</label>
+                        <input type="text" class="form-control" id="signup-email" name="username" placeholder="Email" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="signup-password" name="password" placeholder="Senha" required/>
+                    </div>
+                    
+                    <div class="modal-footer d-block">
+                        <button type="submit" class="btn btn-warning float-end" onclick="closeDialog()">Cadastrar</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</form>
+
+
     <!--CONTENT (SENSOR READINGS)-->
-    <!--div class="content-sign-in" id="content-sign-in" style="display: none;"-->
+    <div class="content-sign-in" id="content-sign-in" style="display: none;">
 
       <!--LAST UPDATE-->
       <!--
@@ -99,96 +153,46 @@
     -->
 
 <!--quando isso sumir, deve voltar a funcionar :) -->
+  <br>
+  <h3>Sobre o Projeto</h3>
 <br>
-<div class="card_teste">
-<h2>Roteiro de teste de Usabilidade </h2>
-
-<br><br>
-<h3>1.1 Introdução</h3>
+  <h5>O Projeto Estação Meteorológica do Aerodesign é parte de um trabalho de Conclusão de Curso, de Engenharia da Computação
+    da Universidade Federal do Vale do São Francisco.
 <br>
-
-<h5>Este documento foi elaborado com finalidade de realizar os testes de usabilidade da aplicação desenvolvida, a 
-Estação Meteorológicado Aerodesign, trabalho apresentado à Universidade Federal do Vale do São Francisco -
-UNIVASF, Campus Juazeiro, como requisito para obtenção do título de Bacharel em
-Engenharia da Computação sob orientação do professor doutor Brauliro Gonçalves Leal.
-
-<br>Os testes aqui descritos são sucintos e diretos. Assim, todos os procedimentos e
-recursos necessários para a execução do referido teste são descritos detalhadamente a
-seguir.</h5>
-
-<br>
-<h3>1.2 Propósito do teste<br></h3>
-
-O roteiro de teste de usabilidade visa alcançar os seguintes objetivos:
-<br>
-
-<ul>
-  <li>Mensurar o grau de satisfação dos envolvidos na Competição SAE Brasil Aerodesign quanto à usabilidade aplicação desenvolvida e identificar os fatores que podem influenciar na
-    satisfação do usuário frente à usabilidade.</li>
-  <li>Calcular a pontuação de usabilidade usando o System Usability Score (obtido a
-    partir de 10 questões objetivas do usuário após o uso do sistema) que será coletado
-    através de um formulário ao final deste teste de usabilidade.</li>
-</ul> 
-<br>
-<h3>1.3 Participantes<br></h3>
-
-Para a realização do teste de usabilidade, serão aptos todos os envolvidos na competição SAE Brasil Aerodesign, sendo competidores (estudantes ou professores) e
-comissão técnica (juízes e fiscais).<br><br>
-
-<h3>1.4 Tarefas implementadas <br></h3>
-
-A aplicação desenvolvida disponibiliza as seguintes atividades:
-
-<ul>
-  <li>Visualização das medições de temperatura, pressão, umidade e AD mais recente</li>
-  <li>Apresentar essas medições em forma de tabela e separadas por dia</li>
-  <li>Apresentar essas medições na forma de gráficos e separadas por dia</li>
-  <li>Verificar as pontuacões das equipes a cada atualização</li>
-</ul>
-
-<br>
-<h3>1.5 Roteiro de Testes<br></h3>
-
-<br>
-Os testes serão iniciados, para começar, você deve entrar no sistema com o seguinte link: <a href="https://estacaoaero.web.app/" target="_blank">https://estacaoaero.web.app/</a> 
-<br>
-Cabe destacar que as datas presentes em alguns gráficos e tabelas, além de arquivos de pontuações são apenas para fins de demonstração e testes.
-<br>
-
-<h5>
-Tarefa 1: Registre-se colocando um email de sua preferência e uma senha, caso já tenha login, logue com a sua conta já criada anteriormente.
-<br><br>
-Tarefa 2: Verifique se todos as medições estão aparecendo na tela inicial, são elas: Temperatura, AD, Pressão e Umidade;
-<br><br>
-
-Tarefa 3: Abra a barra lateral para navegar entre as funcionalidades, clicando no botão superior (<i class='bx bx-menu' id="header-toggle"></i>) próximo ao cabeçalho (usuário de celular devem abrir a barra lateral para navegar por outras páginas)
-<br><br>
-
-Tarefa 4: Acesse a opção "Histórico" e verifique se todas as medições estão sendo apresentadas (Obs. As datas são apenas para fins de testes).
-<br><br>
-
-Tarefa 5: Conforme apresentado na Tarefa 3, acesse a opção "Gráficos" e verifique se os gráficos das 4 medições estão sendo apresentados e é possível escolher outro dia para visualizar os gráficos.
-<br><br>
-
-Tarefa 6: Entre em "Pontuações", de acordo com a Tarefa 3, e escolha alguma bateria e classe para ver 
-as pontuações da mesma.
-<br><br>
-
-Tarefa 7: Por fim, deslogue da sua conta acessando o menu lateral e selecionando o último botão (<i class='bx bx-log-out nav_icon'></i>), ele pode ser acessado após abrir a barra lateral (Tarefa 3).
-</h5>
-<br><br>
-
-<h3>1.6 Questionário</h3>
-
-Após feitas todas as tarefas, responda ao seguinte questionário, composto por 10 perguntas.
-<br>
-Caso não consiga visualizar o questionário abaixo, acesse por meio do seguinte link: <a href="https://forms.gle/o8kA4V377t8eWVqg6
-" target="_blank">https://forms.gle/o8kA4V377t8eWVqg6</a> 
-
-<br><br>
+    Desenvolvido pelo aluno Victor Augusto, do 10º periodo do curso e também competidor na competição SAE Brasil Aerodesign.
+    <br><br>
+    &rarr;  Acesse meu  <a href="https://drive.google.com/file/d/1wmnYdteFvSmChnv4fWNVJ2mvwfD_GLmY/view?usp=sharing" target="_blank">currículo</a>
+     ou <a href="https://github.com/victorltd/" target="_blank">Github</a>  &larr;
 
 
-<iframe class="center" src="https://docs.google.com/forms/d/e/1FAIpQLSfAkgwWHNLtTnKrO1-hNtvEvM7v4FycSQoWQiTLGeCA3QuN6w/viewform?embedded=true" width="640" height="3645" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe></div>
+  </h5>
+
+  <h6>
+    <br><br>
+    Ao observar a lacuna existente na Competição SAE Brasil Aerodesign no que tange
+    às medições meteorológicas e seu impacto em todas as equipes, notou-se a viabilidade
+    de criar um meio pelo qual os envolvidos na SAE Brasil Aerodesign, pudessem acessar
+    de maneira rápida os principais parâmetros meteorológicos no contexto da competição
+
+    <br><br>
+    Até então, esses dados eram coletados de uma estação comercial instalada no Aeroporto Internacional de São José dos Campos e 
+    divulgada para os competidores, a cada trinta minutos, aproximadamente, em uma folha de papel fixada em um mural. Porém, isso pode
+     levar ás equipes que voarem nesse intervalo de tempo não terem a certeza dos parâmetros meteorológicos, uma vez que acontecem 
+     flutuações climáticas, e dessa forma não sabem exatamente a quantidade de carga a carregar, para pontuar o máximo possível no
+      quesito acuracidade.
+    <br><br>
+  <img src="img/ad2019.jpg" alt="Medição no ano de 2019" width="500" height="300">
+
+    <br>
+      O trabalho tem como foco o desenvolvimento da aplicação web
+      para uso durante a Competição SAE Brasil Aerodesign, que ajudará muitas equipes a
+      tomarem decisões estratégicas em relação a quantidade de carga que suas aeronaves irão
+      carregar, criando assim um produto que poderá ser implementado e largamente usado nas próximas competições e ajudando a todos os
+      envolvidos
+
+    </h6>
+  
+
               
               
 

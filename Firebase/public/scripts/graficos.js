@@ -23,6 +23,9 @@ Highcharts.chart('ad-sabado', {
       },
       plotOptions: {
         series: {
+            marker: {
+                enabled: false
+            },
             color: '#EC5555'
         }
     },
@@ -162,7 +165,7 @@ Highcharts.chart('umid-sexta', {
         }
     },
     data: {
-        csvURL: 'https://raw.githubusercontent.com/victorltd/TCC/main/Firebase/public/docs/ad2.csv',
+        csvURL: 'https://raw.githubusercontent.com/victorltd/TCC/main/Firebase/public/docs/umid.csv',
         enablePolling: true
     }
 });
